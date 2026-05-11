@@ -233,22 +233,52 @@ body.dark-mode .v-line-svg { stroke: rgba(255,255,255,0.05); }
   top:var(--nav);left:0;right:0;
   background:var(--paper2);
   border-bottom:1px solid rgba(26,24,20,.1);
-  padding:20px 24px;z-index:699;
+  padding:20px 24px 24px;z-index:699;
   flex-direction:column;gap:0;
   transform:translateY(-8px);opacity:0;
-  transition:opacity .25s,transform .25s;
+  transition:opacity .3s,transform .3s;
   pointer-events:none;
+  max-height:calc(100vh - var(--nav));
+  overflow-y:auto;
 }
 .mobile-menu.open{
   display:flex;opacity:1;transform:translateY(0);pointer-events:all;
 }
 .mobile-menu a{
   font-family:var(--mono);font-size:13px;color:var(--sand2);
-  padding:12px 0;border-bottom:1px solid rgba(26,24,20,.06);
+  padding:14px 0;border-bottom:1px solid rgba(26,24,20,.06);
   transition:color .2s;
+  min-height:44px;display:flex;align-items:center;
 }
 .mobile-menu a:last-child{border-bottom:none}
-.mobile-menu a:hover{color:var(--rust)}
+.mobile-menu a:hover,
+.mobile-menu a:active{color:var(--rust)}
+.mob-footer{
+  margin-top:20px;
+  padding-top:16px;
+  border-top:1px solid rgba(26,24,20,.08);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.mob-socials{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+.mob-socials a{
+  border:none!important;
+  padding:0!important;
+  min-height:unset!important;
+  color:var(--sand2);
+  opacity:.7;
+  transition:opacity .2s,color .2s;
+}
+.mob-socials a:hover{opacity:1;color:var(--rust)}
+.mob-socials svg{width:16px;height:16px;fill:currentColor;display:block}
+.mob-dm{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:var(--sand2);letter-spacing:.5px;cursor:pointer;background:none;border:1px solid rgba(26,24,20,.12);border-radius:4px;padding:7px 12px;transition:border-color .2s,color .2s;}
+.mob-dm:hover{border-color:var(--rust);color:var(--rust)}
+.mob-dm svg{width:14px;height:14px;flex-shrink:0}
 
 /* ─────────────── MAIN ─────────────── */
 .main-wrap{
@@ -770,71 +800,112 @@ footer{
 @media (max-width:768px) {
   :root{ --sb:0px }
   .sidebar{ display:none }
+  .v-tracker{ display:none }
   .main-wrap{ margin-left:0 }
+  #p-canvas{ display:none }
 
   .topnav{
     left:0;
-    padding:0 20px;
+    padding:0 16px;
     justify-content:space-between;
   }
+  .tnav-inner{ padding:0; max-width:100%; }
   .tnav-links{ display:none }
   .tnav-email{ display:none }
+  .tnav-icons a{ display:none }
+  .dm-toggle{ display:none }
   .hamburger{ display:flex }
 
-  section{ padding:calc(var(--nav) + 40px) 20px 56px }
-  section:first-child{ padding-top:calc(var(--nav) + 16px) }
+  section{ padding:calc(var(--nav) + 36px) 18px 52px }
+  section:first-child{ padding-top:calc(var(--nav) + 12px) }
+  .container{ max-width:100% }
 
-  /* hero: stack vertically */
+  /* ── HERO ── */
   .hero-inner{
     grid-template-columns:1fr;
-    gap:40px;
+    gap:28px;
   }
   .hero-photo{
     order:-1;
-    width:min(260px,70vw);
+    width:min(280px,72vw);
+    height:380px;
     margin:0 auto;
   }
   .hero-name{
-    font-size:clamp(44px,12vw,72px);
+    font-size:clamp(38px,11vw,68px);
     letter-spacing:-1.5px;
   }
+  .hero-bio{ font-size:14px;line-height:1.7 }
+  .hero-meta{ font-size:12px;gap:6px;flex-wrap:wrap }
+  .hero-avail{ font-size:11px }
+  .hero-ctas{ flex-direction:column;gap:10px }
+  .btn-primary,.btn-ghost{
+    width:100%;justify-content:center;text-align:center;
+    padding:13px 20px;
+  }
+  .photo-card{ padding:10px 14px }
 
-  /* about */
-  .about-grid{ grid-template-columns:1fr;gap:36px }
-  .stats{ grid-template-columns:1fr 1fr }
+  /* ── ABOUT ── */
+  .about-grid{ grid-template-columns:1fr;gap:28px }
+  .stats{ grid-template-columns:1fr 1fr;gap:16px }
+  .stat-num{ font-size:36px }
 
-  /* exp rows: stack */
+  /* ── SKILLS ── */
+  .skills-wrap{ gap:8px }
+  .sk{ padding:10px 12px;gap:7px }
+  .sk span{ font-size:11px }
+  .sk img{ width:22px;height:22px }
+
+  /* ── EXPERIENCE ── */
   .exp-row{
     grid-template-columns:1fr;gap:0;
+    padding:20px 0;
   }
   .exp-left-wrap{
-    display:flex;align-items:center;gap:12px;margin-bottom:14px;
+    display:flex;align-items:center;gap:12px;margin-bottom:12px;
   }
-  .exp-logo{ margin-bottom:0 }
+  .exp-logo{ margin-bottom:0;width:36px;height:36px }
   .exp-row::before{ display:none }
+  .exp-title{ font-size:16px }
+  .exp-desc{ font-size:13px }
+  .exp-tech{ flex-wrap:wrap }
 
-  /* projects */
-  .proj-row{ grid-template-columns:36px 1fr;gap:14px }
+  /* ── PROJECTS ── */
+  .proj-row{ grid-template-columns:32px 1fr;gap:12px;padding:16px 0 }
   .proj-links-col{ display:none }
+  .proj-name{ font-size:14px }
+  .proj-desc{ font-size:13px }
+  .proj-tech{ flex-wrap:wrap }
 
-  /* hackathons */
-  .hack-row{ grid-template-columns:1fr;gap:0 }
-  .hbadge{ margin-top:12px;width:fit-content }
+  /* ── HACKATHONS ── */
+  .hack-row{ grid-template-columns:1fr;gap:0;padding:16px 0 }
+  .hbadge{ margin-top:10px;width:fit-content }
   .hack-row::before{ display:none }
 
-  /* connect */
-  .connect-grid{ grid-template-columns:1fr;gap:40px }
+  /* ── CONNECT ── */
+  .connect-grid{ grid-template-columns:1fr;gap:32px }
+  .connect-title{ font-size:clamp(32px,9vw,48px) }
+  .conn-links{ gap:8px }
+  .conn-link{ padding:12px 14px }
+  .fb-btn{ width:100%;align-self:stretch;text-align:center;padding:13px }
+  .fb-ta{ height:90px }
 
-  footer{ padding:18px 20px }
+  /* ── FOOTER ── */
+  footer{ padding:16px 18px;flex-direction:column;text-align:center;gap:6px }
   .topnav.mobile-open{ border-color:rgba(26,24,20,.08) }
+
+  /* ── GITHUB GRID ── */
+  .gh-grid{ overflow-x:auto }
 }
 
-/* VERY SMALL ≤380 */
-@media (max-width:380px) {
-  .hero-name{ font-size:40px }
-  .hero-ctas{ flex-direction:column }
-  .btn-primary,.btn-ghost{ width:100%;justify-content:center }
+/* VERY SMALL ≤400px */
+@media (max-width:400px) {
+  .hero-name{ font-size:36px }
+  .hero-photo{ width:90vw;height:320px }
   .stats{ grid-template-columns:1fr }
+  .conn-val{ font-size:11px }
+  .fb-title{ font-size:20px }
+  section{ padding:calc(var(--nav) + 28px) 14px 44px }
 }
 </style>
 </head>
@@ -915,6 +986,29 @@ footer{
   <a href="#projects"   onclick="closeMob()">Projects</a>
   <a href="#hackathons" onclick="closeMob()">Hackathons</a>
   <a href="#connect"    onclick="closeMob()">Connect</a>
+  <div class="mob-footer">
+    <div class="mob-socials">
+      <a href="https://github.com/Atif-Azmi" target="_blank" title="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 6.268c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.218.694.825.576C20.565 22.297 24 17.8 24 12.5 24 5.87 18.627.5 12 .5z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/atif-azmi" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/atif._.azmi?igsh=eWpzZnczNGttYzEw" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5a4.25 4.25 0 0 0-4.25 4.25v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5-2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+      </a>
+      <a href="mailto:atifazmi2005@email.com" title="Email">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+      <a href="https://x.com/" target="_blank" title="Twitter/X">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+    <button class="mob-dm" onclick="toggleDarkMode()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg>
+      Theme
+    </button>
+  </div>
 </div>
 
 <!-- ── MAIN ── -->
