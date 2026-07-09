@@ -1972,8 +1972,9 @@ footer {
         font-size: 36px
     }
     .hero-photo {
-        width: 90vw;
-        height: 320px
+        width: min(270px, 85vw);
+        height: 380px;
+        margin: 0 auto;
     }
     .stats {
         grid-template-columns: 1fr

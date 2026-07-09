@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import ChatWidget from "./ChatWidget";
+import profileImg from "../profile.png";
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem("darkMode") === "true");
@@ -520,7 +521,7 @@ export default function App() {
               {/* RIGHT — photo */}
               <div className="hero-photo" style={{ transform: `translateY(${phTransform}px)` }}>
                 <div className="photo-img">
-                  <img src="profile.png" alt="Mo Atif Azmi" onError={(e) => { e.target.style.display = "none"; }} />
+                  <img src={profileImg} alt="Mo Atif Azmi" onError={(e) => { e.target.style.display = "none"; }} />
                 </div>
                 <div className="photo-card">
                   <span className="pc-loc">📍 Nagpur, MH</span>
