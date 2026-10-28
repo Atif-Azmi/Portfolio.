@@ -11,9 +11,12 @@ Visitors are recruiters, potential clients, and other developers exploring the s
 React, Next.js, TypeScript, JavaScript, Node.js, Express, MongoDB, PostgreSQL, Tailwind CSS, Python, Git, GitHub, Vercel, Figma, Postman, Docker
 
 ## Projects
-1. TradersPro — ERP workspace for hardware businesses to track customers, stock alerts, sales, and bulk WhatsApp reminders. — Tech: React, Node.js, Express, MongoDB, Tailwind CSS — Link: https://traders-proo.vercel.app (Demo ID: test@trader.in, Pass: 123456)
-2. Dairy Web Pro — SaaS-grade dairy management system designed for tracking customers, daily milk entries, payments, and billing. — Tech: Next.js, React, TypeScript, Tailwind CSS, Supabase, PostgreSQL — Link: https://dairy-web-app.vercel.app/
-3. Ambassador Tribute — A rich, visually immersive tribute website celebrating the legendary Indian car with smooth scroll storytelling. — Tech: MongoDB, Express, React, Node.js — Link: https://ambassador-car-website.vercel.app/
+1. AutoSettle — Autonomous AI payment-recovery agent built for Razorpay AI Builder Track. Detects failed checkouts and executes policy-governed re-engagement with quiet-hour suppression, Hinglish intent parsing, HMAC verification, live Razorpay API checks, integer-paise matching, and SHA-256 hash-chained audit ledger. — Tech: TypeScript, Node.js, Express, Redis/BullMQ, MongoDB, Razorpay SDK, Gemini Flash, React — Link: https://autosettle-razorpay-six.vercel.app/ (GitHub: https://github.com/Atif-Azmi/AutoSettle)
+2. Canopy — Startup Outlook — Machine learning platform predicting startup survivability and acquisition outcomes based on historical venture funding profiles using Random Forest, RBF SVM, Logistic Regression, and Decision Tree. — Tech: Python, Scikit-Learn, Random Forest, Flask, Jupyter, Pandas — Link: https://startup-survivability-predictor.onrender.com (GitHub: https://github.com/AamirrH/Startup-Survivability-Predictor)
+3. DuruCare (Duyu) — Ultra-smooth 3D scroll-driven digital product showcase for a modern thyroid wellness brand with 60FPS frame-by-frame canvas image sequence bottle animation synchronized to viewport scrolling. — Tech: Next.js, React, HTML5 Canvas, Tailwind CSS, JavaScript — Link: https://duru-care.vercel.app/ (GitHub: https://github.com/Atif-Azmi/DuruCare)
+4. TradersPro — ERP workspace for hardware businesses to track customers, stock alerts, sales, and bulk WhatsApp reminders. — Tech: React, Node.js, Express, MongoDB, Tailwind CSS — Link: https://traders-proo.vercel.app (Demo ID: test@trader.in, Pass: 123456)
+5. Dairy Web Pro — SaaS-grade dairy management system designed for tracking customers, daily milk entries, payments, and billing. — Tech: Next.js, React, TypeScript, Tailwind CSS, Supabase, PostgreSQL — Link: https://dairy-web-app.vercel.app/
+6. Ambassador Tribute — A rich, visually immersive tribute website celebrating the legendary Indian car with smooth scroll storytelling. — Tech: MongoDB, Express, React, Node.js — Link: https://ambassador-car-website.vercel.app/
 
 ## Experience
 - Full Stack Developer Intern at Shaibya Solutions (May 2026 — Present)
@@ -91,7 +94,7 @@ export default function ChatWidget() {
 
     function runFallbackMatching(userInput) {
       const lower = userInput.toLowerCase();
-      let reply = "I'm Atif's AI assistant. I can tell you that he is a Full Stack Developer from Nagpur, building scalable web apps and SaaS products like TradersPro and Dairy Web Pro! Ask me about his skills, experience, or projects.";
+      let reply = "I'm Atif's AI assistant. I can tell you that he is a Full Stack Developer from Nagpur, building scalable web apps and SaaS products like AutoSettle, Canopy ML, DuruCare, and TradersPro! Ask me about his skills, experience, or projects.";
 
       const inputWords = lower.split(/[^a-zA-Z0-9]/).filter(Boolean);
 
@@ -105,6 +108,12 @@ export default function ChatWidget() {
         reply = "Hello! Nice to meet you. Feel free to ask me anything about Atif's projects, experience, education, or skills.";
       } else if (/\b(who\s+(r|are)\s+(u|you)|your\s+name|ur\s+name)\b/i.test(lower)) {
         reply = "I'm Atif's AI portfolio assistant. Ask me anything about his technical background, education, projects, or work history!";
+      } else if (matches(["autosettle", "razorpay", "recovery", "settle", "payment"])) {
+        reply = "AutoSettle is an autonomous AI revenue-recovery agent built for the Razorpay AI Builder Track. It detects failed digital payments and recovers them within strict safety guardrails. It enforces 100% closed-loop recovery proof with HMAC-verified webhooks, live Razorpay API verification, exact integer-paise matching, and a tamper-evident SHA-256 hash-chained ledger.";
+      } else if (matches(["canopy", "startup", "survivability", "predictor", "prediction", "ml", "machine"])) {
+        reply = "Canopy is a machine learning web app that predicts startup survivability (acquired vs. closed) from historical venture investment datasets. Built with Python, Scikit-Learn, and Flask, it compares four ML algorithms (Random Forest, RBF SVM, Logistic Regression, Decision Tree) under a unified evaluation protocol.";
+      } else if (matches(["durucare", "duru", "duyu", "thyroid", "canvas", "3d", "supplement"])) {
+        reply = "DuruCare (Duyu) is a 3D scroll-driven product experience built for a modern thyroid health supplement brand. It features a high-performance 60FPS frame-by-frame canvas image sequence synchronized to user scrolling with responsive multi-device fallbacks.";
       } else if (matches(["traderspro", "traderpro", "traders", "trader"])) {
         reply = "TradersPro is a comprehensive ERP workspace built for hardware businesses. It manages customers, inventory, sales, stock alerts, and bulk WhatsApp reminders. It is built using the MERN stack (React, Node.js, Express, MongoDB, Tailwind CSS).";
       } else if (matches(["dairy", "milk", "pasture", "billing"])) {

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .bg { fill: #fdfaf0; }
+      .brand { fill: #173829; }
+      .brand-stroke { stroke: #173829; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .badge-bg { fill: #fdfaf0; }
+      .badge-code { fill: #173829; font-family: 'DM Mono', monospace, monospace; font-weight: bold; }
+      .label-text { fill: #173829; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 800; }
+      .sub-text { fill: #173829; font-family: 'DM Sans', sans-serif; font-weight: 600; opacity: 0.85; }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #0f1712; }
+        .brand { fill: #52b788; }
+        .brand-stroke { stroke: #52b788; }
+        .badge-bg { fill: #0f1712; }
+        .badge-code { fill: #52b788; }
+        .label-text { fill: #ffffff; }
+        .sub-text { fill: #52b788; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background rounded canvas -->
+  <rect width="512" height="512" rx="108" class="bg" />
+
+  <!-- Monogram Logo Container -->
+  <g transform="translate(0, -10)">
+    <!-- A & D Connected Monogram -->
+    <!-- 'A' Left Apex & Outer Leg -->
+    <path class="brand" d="M198 104 L96 308 L138 308 L170 242 L225 242 C248 242 270 216 288 192 C306 168 330 148 360 148 C416 148 456 190 456 250 L456 94 L420 114 L420 188 C398 160 366 142 328 142 C288 142 258 166 238 192 C220 216 200 232 182 234 L198 202 L198 104 Z" />
+    
+    <!-- 'd' Right Counter and Stem -->
+    <path class="brand" d="M360 148 C302 148 256 196 256 256 C256 312 298 356 356 356 C412 356 456 314 456 256 L456 94 L420 114 L420 254 C420 286 394 314 358 314 C324 314 298 288 298 254 C298 218 326 190 360 190 C382 190 404 200 416 218 L442 196 C422 168 392 148 360 148 Z" />
+
+    <!-- Left Leg of A base -->
+    <polygon class="brand" points="96,308 136,308 174,232 142,232" />
+
+    <!-- Center Code Badge inside loop -->
+    <circle cx="360" cy="254" r="48" class="badge-bg" />
+    <path class="brand-stroke" stroke-width="7" d="M346 238 C340 242 338 248 338 254 C338 260 340 266 346 270" />
+    <line x1="366" y1="234" x2="354" y2="274" class="brand-stroke" stroke-width="6" />
+    <path class="brand-stroke" stroke-width="7" d="M374 238 C380 242 382 248 382 254 C382 260 380 266 374 270" />
+
+    <!-- Ribbon text label -->
+    <text x="216" y="244" transform="rotate(-30 216 244)" class="sub-text" font-size="12" letter-spacing="1">Mo Atif Azmi</text>
+    <text x="342" y="340" class="sub-text" font-size="14" letter-spacing="1">Azmi</text>
+  </g>
+
+  <!-- Wordmark 'atif.dev' -->
+  <text x="256" y="440" text-anchor="middle" class="label-text" font-size="78" letter-spacing="-1.5">atif.dev</text>
+</svg>

@@ -563,7 +563,7 @@ export default function App() {
               <div className="stats r d2">
                 <div className="st">
                   <div className="st-n">
-                    <span className="counter" data-to="3" data-suffix="+">
+                    <span className="counter" data-to="6" data-suffix="+">
                       0
                     </span>
                   </div>
@@ -677,6 +677,107 @@ export default function App() {
               <div className="proj-row r">
                 <div className="proj-n">01</div>
                 <div>
+                  <div className="proj-name">AutoSettle</div>
+                  <div className="proj-desc">
+                    Autonomous AI payment-recovery agent built for the Razorpay AI Builder Track. Detects failed checkout attempts (UPI timeouts, bank declines, insufficient funds) and executes policy-governed recovery workflows with quiet-hour suppression and Hinglish intent parsing. Enforces 100% closed-loop recovery proof — settlements require HMAC-verified webhooks, live Razorpay API confirmation, and exact integer-paise matching before closing. Features BullMQ distributed locks, reconciliation poller, and a tamper-evident SHA-256 hash-chained audit ledger.
+                  </div>
+                  <div className="proj-stack">
+                    <span className="pt">TypeScript</span>
+                    <span className="pt">Node.js</span>
+                    <span className="pt">Express</span>
+                    <span className="pt">Redis / BullMQ</span>
+                    <span className="pt">MongoDB</span>
+                    <span className="pt">Razorpay SDK</span>
+                    <span className="pt">Gemini Flash</span>
+                    <span className="pt">React</span>
+                  </div>
+                </div>
+                <div className="proj-links-col">
+                  <a href="https://autosettle-razorpay-six.vercel.app/" target="_blank" rel="noreferrer" className="proj-lnk">
+                    <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                    </svg>
+                    Live
+                  </a>
+                  <a href="https://github.com/Atif-Azmi/AutoSettle" target="_blank" rel="noreferrer" className="proj-lnk">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 6.268c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.218.694.825.576C20.565 22.297 24 17.8 24 12.5 24 5.87 18.627.5 12 .5z" />
+                    </svg>
+                    Code
+                  </a>
+                </div>
+              </div>
+
+              {/* Project 2 */}
+              <div className="proj-row r d1">
+                <div className="proj-n">02</div>
+                <div>
+                  <div className="proj-name">Canopy — Startup Outlook</div>
+                  <div className="proj-desc">
+                    Machine learning platform predicting startup survivability and acquisition outcomes based on historical venture funding datasets. Rigorously benchmarked 4 algorithms (Random Forest, RBF SVM, Logistic Regression, Decision Tree) under a unified evaluation protocol, deploying the finalized Random Forest model into an accessible Flask interface with real-time parameter inference and probabilistic projections across capital raised, rounds, and market sectors.
+                  </div>
+                  <div className="proj-stack">
+                    <span className="pt">Python</span>
+                    <span className="pt">Scikit-Learn</span>
+                    <span className="pt">Random Forest</span>
+                    <span className="pt">Flask</span>
+                    <span className="pt">Jupyter</span>
+                    <span className="pt">Pandas</span>
+                  </div>
+                </div>
+                <div className="proj-links-col">
+                  <a href="https://startup-survivability-predictor.onrender.com" target="_blank" rel="noreferrer" className="proj-lnk">
+                    <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                    </svg>
+                    Live
+                  </a>
+                  <a href="https://github.com/AamirrH/Startup-Survivability-Predictor" target="_blank" rel="noreferrer" className="proj-lnk">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 6.268c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.218.694.825.576C20.565 22.297 24 17.8 24 12.5 24 5.87 18.627.5 12 .5z" />
+                    </svg>
+                    Code
+                  </a>
+                </div>
+              </div>
+
+              {/* Project 3 */}
+              <div className="proj-row r d2">
+                <div className="proj-n">03</div>
+                <div>
+                  <div className="proj-name">DuruCare (Duyu)</div>
+                  <div className="proj-desc">
+                    Ultra-smooth 3D scroll-driven digital product showcase crafted for a modern thyroid health and dietary wellness brand. Implements an interactive 60FPS frame-by-frame canvas image sequence synchronized to viewport scrolling, responsive asset resolution fallbacks (desktop/tablet/mobile), fluid scroll-tied typography, and zero-jank luxury brand aesthetics.
+                  </div>
+                  <div className="proj-stack">
+                    <span className="pt">Next.js</span>
+                    <span className="pt">React</span>
+                    <span className="pt">HTML5 Canvas</span>
+                    <span className="pt">Tailwind CSS</span>
+                    <span className="pt">JavaScript</span>
+                    <span className="pt">Vercel</span>
+                  </div>
+                </div>
+                <div className="proj-links-col">
+                  <a href="https://duru-care.vercel.app/" target="_blank" rel="noreferrer" className="proj-lnk">
+                    <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                    </svg>
+                    Live
+                  </a>
+                  <a href="https://github.com/Atif-Azmi/DuruCare" target="_blank" rel="noreferrer" className="proj-lnk">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 6.268c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.218.694.825.576C20.565 22.297 24 17.8 24 12.5 24 5.87 18.627.5 12 .5z" />
+                    </svg>
+                    Code
+                  </a>
+                </div>
+              </div>
+
+              {/* Project 4 */}
+              <div className="proj-row r d1">
+                <div className="proj-n">04</div>
+                <div>
                   <div className="proj-name">TradersPro</div>
                   <div className="proj-desc">
                     Fresh operations for your hardware business. Track customers, sales, stock alerts, and bulk WhatsApp reminders in one calm, premium workspace — built for clarity, not clutter.
@@ -708,9 +809,9 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Project 2 */}
-              <div className="proj-row r d1">
-                <div className="proj-n">02</div>
+              {/* Project 5 */}
+              <div className="proj-row r d2">
+                <div className="proj-n">05</div>
                 <div>
                   <div className="proj-name">Dairy Web Pro</div>
                   <div className="proj-desc">
@@ -741,9 +842,9 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Project 3 */}
-              <div className="proj-row r d2">
-                <div className="proj-n">03</div>
+              {/* Project 6 */}
+              <div className="proj-row r d3">
+                <div className="proj-n">06</div>
                 <div>
                   <div className="proj-name">Ambassador Tribute</div>
                   <div className="proj-desc">
